@@ -5,18 +5,19 @@ class Result extends StatelessWidget {
   Result({required this.bmi});
   @override
   Widget build(BuildContext context) {
-    var bmi;
+
+    print(bmi);
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI Result'),
       ),
       body: Center(
-        child: Text(
-          'Your BMI is: ${bmi.toStringAsFixed(2)}',
+        child: Text("BMI = ${bmi.toStringAsFixed(2)}",
           style: TextStyle(fontSize: 24),
         ),
       ),
     );
   }
 }
+
 

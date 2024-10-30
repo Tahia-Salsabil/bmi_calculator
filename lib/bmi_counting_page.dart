@@ -14,11 +14,13 @@ class _BmiCountingPageState extends State<BmiCountingPage> {
   final _heightController = TextEditingController();
 
   void _calculateBMI() {
-    final double weight = double.tryParse(_weightController.text) ?? 0;
-    final double height = double.tryParse(_heightController.text) ?? 0;
+    final double weight = double.parse(_weightController.text.toString());
+    final double height = double.parse(_heightController.text.toString());
 
     if (weight > 0 && height > 0) {
       final double bmi = weight / (height * height);
+
+
       print(bmi);
       Navigator.push(
         context,
@@ -40,37 +42,37 @@ class _BmiCountingPageState extends State<BmiCountingPage> {
                 child: Column(
                   children: [
 
-                  Padding(
-                   padding: EdgeInsets.all(15),
-                   child: TextField(
-                     controller: _weightController,
-                    decoration: InputDecoration(
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: _weightController,
+                        decoration: InputDecoration(
 
-                      //  border: UnderlineInputBorder(), for only under line input field
-                      border: OutlineInputBorder(),  //round box input field
-                      labelText: 'Weight',
-                      hintText: 'Enter Your Weight',
-                      prefixIcon: const Icon(Icons.accessibility_rounded),
+                          //  border: UnderlineInputBorder(), for only under line input field
+                          border: OutlineInputBorder(),  //round box input field
+                          labelText: 'Weight',
+                          hintText: 'Enter Your Weight',
+                          prefixIcon: const Icon(Icons.accessibility_rounded),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
                     ),
-                     keyboardType: TextInputType.number,
-                  ),
-                ),
 
-                  Padding(
-                    padding: EdgeInsets.all(15),
-                     child: TextField(
-                       controller: _heightController,
-                      decoration: InputDecoration(
+                    Padding(
+                      padding: EdgeInsets.all(15),
+                      child: TextField(
+                        controller: _heightController,
+                        decoration: InputDecoration(
 
-                      //  border: UnderlineInputBorder(), for only under line input field
-                      border: OutlineInputBorder(),  //round box input field
-                      labelText: 'Hight',
-                      hintText: 'Enter Your Hight',
-                      prefixIcon: const Icon(Icons.accessibility_sharp),
+                          //  border: UnderlineInputBorder(), for only under line input field
+                          border: OutlineInputBorder(),  //round box input field
+                          labelText: 'Hight',
+                          hintText: 'Enter Your Hight',
+                          prefixIcon: const Icon(Icons.accessibility_sharp),
+                        ),
+                        keyboardType: TextInputType.number,
+                      ),
                     ),
-                       keyboardType: TextInputType.number,
-                  ),
-                ),
 
                     Padding(
                       padding: const EdgeInsets.all(30.100),
@@ -93,4 +95,3 @@ class _BmiCountingPageState extends State<BmiCountingPage> {
     );
   }
 }
-d
